@@ -32,7 +32,9 @@ DEBUG = False
 if DEBUG:
     BASE_URL = 'http://127.0.0.1:8000/'
 else:
-    BASE_URL = 'https://zaukho.in/'  
+    BASE_URL = 'http://13.127.161.2/'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  
 
 
 ALLOWED_HOSTS = ['*']
@@ -179,3 +181,9 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = config('EMAIL_USE_SSL')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+AWS_S3_ACCESS_KEY_ID = config('AWS_S3_ACCESS_KEY_ID')
+AWS_S3_SECRET_ACCESS_KEY = config('AWS_S3_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
+AWS_QUERYSTRING_EXPIRE = 1000
