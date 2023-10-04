@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+<!-- title -->
+{%block title%}
+Project one
+{%endblock%}
+<!-- title -->
+
+<!-- meta tag -->
+{%block meta-tag%}
+
+{%endblock%}
+<!-- meta tag -->
+
+<!-- content area -->
+{%block content%}
+{%include 'components/nav/default.html'%}
+{%include 'components/message.html'%}
+<div class="container d-flex justify-content-center align-items-center min-height-90vh">
+    <div class="div">
+        <p class="h1">Welcome Surfers</p>
+    <p class="small">Welcome to Surf, the premier platform connecting tech enthusiasts with job opportunities and direct communication with startup founders for potential hires.</p>
+    <a href="{%url 'projectone:top-companies'%}"><button class="btn btn-dark rounded-0">Explore</button></a>
+    </div>
+</div>
+{%include 'components/footer/default.html'%}
+{%endblock%}
+<!-- content area -->

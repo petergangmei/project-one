@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Profile Edit</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{%url 'account:update-profile'%}" method="post">
+                    {%csrf_token%}
+                    <div class="input-group">
+                        <span class="input-group">Your name:</span>
+                        <input type="text" aria-label="First name" name="fname" placeholder="Frist name"
+                            class="form-control" value="{{request.user.first_name}}" />
+                        <input type="text" aria-label="Last name" name="lname" placeholder="Last name"
+                             class="form-control" value="{{request.user.last_name}}"/>
+                    </div>
+
+                    <div class="input-group my-2">
+                        <span class="input-group">Email:</span>
+                        <input type="text" class="form-control" value="{{request.user.email}}" disabled>
+                    </div>
+
+                    <div class="input-group my-2">
+                        <span class="input-group">Username:</span>
+                        <input type="text" class="form-control" value="{{request.user.username}}" disabled>
+                    </div>
+
+                    <i class="small my-3">Email and username can not be changed here, if you need to change it, contact
+                        us at support@xyz.com</i>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

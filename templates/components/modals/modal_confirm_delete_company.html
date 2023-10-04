@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteCompanyModal{{c.slug}}" tabindex="-1" aria-labelledby="confirmDeleteCompanyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteCompanyModalLabel">Delete company</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="">Do you confirm deleting : <b>{{c.name}}</b></p>
+                <form action="{%url 'projectone:delete-company'%}" method="post">
+                    {%csrf_token%}
+                    <input type="hidden" value="{{c.slug}}" name="slug">
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

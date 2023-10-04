@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="modal fade" id="addCompanyModal" tabindex="-1" aria-labelledby="addCompanyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCompanyModalLabel">Add company</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{%url 'projectone:add-company'%}" method="post">
+                    {%csrf_token%}
+                    
+
+                    <div class="input-group my-2">
+                        <span class="input-group">Company name:</span>
+                        <input type="text" name="cname" class="form-control">
+                    </div>
+
+                    <div class="my-2">
+                        <span class="input-group">About:</span>
+                        <textarea placeholder="About Company" name="cabout" rows="4" cols="10" class="form-control"></textarea>
+                    </div>
+
+                   
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
