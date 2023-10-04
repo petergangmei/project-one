@@ -30,6 +30,7 @@
        i.g "if you provide 'top-companies/pulbic/' all the top companies will be provide" i.g "if you provide 'top-companies/private/' 
        you will be provided with only those companies that user have created.
    h. 'delete-company/<slug>/' delete method to delete the comapny, access token required.
+   i. 'add-company' use this endpoint to add new company.
 
 
 For email to work, you will need to setup .env files with this info:
@@ -41,4 +42,6 @@ EMAIL_USE_SSL =
 EMAIL_HOST_USER = Youremail@mail.com
 EMAIL_HOST_PASSWORD = your email account password.
 
-pip install -r requirements.txt to install all the required dependency.
+* pip install -r requirements.txt to install all the required dependency.
+
+* s3 store for hosting static files.
